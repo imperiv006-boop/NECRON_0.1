@@ -36,12 +36,15 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          
           git add configs.txt version.txt -f
+          
           if git diff --staged --quiet; then
             echo "❌ Нет изменений"
           else
           git fetch origin main
           git pull --rebase origin main # Это самое главное
+          
             git commit -m "🔄 Автообновление NECRON конфигов $(date +%Y-%m-%d_%H:%M)"
             git push
             echo "✅ Обновлено и запушено!"
