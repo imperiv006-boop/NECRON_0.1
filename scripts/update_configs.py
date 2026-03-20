@@ -123,7 +123,7 @@ def fetch_and_process_source(url, source_name):
                     flag = extract_flag_from_comment(comment)
                     country = COUNTRIES.get(flag, 'Anycast')
                     
-                    new_line = f"{url_part}#{flag} {country} |💠| от катлер"
+                    new_line = f"{url_part}#{flag} {country} от Некрона"
                     configs.append(new_line)
                     
                 except Exception as e:
@@ -138,7 +138,6 @@ def fetch_and_process_source(url, source_name):
 
 def main():
     log("=" * 50)
-    log("🚀 CatwhiteVPN - Сбор из двух источников")
     
     version = get_version()
     log(f"📦 Версия: {version}")
@@ -169,11 +168,8 @@ def main():
     
     # Заголовок
     header = [
-        "#profile-title: 👾🌿CatwhiteVPN🌿👾",
+        "#profile-title: NECRON",
         "#profile-update-interval: 1",
-        f"#announce: ⚡️Тгк @catlergememe версия: {version}⚡️",
-        "#support-url: https://t.me/catlergememe/856",
-        "#profile-web-page-url: https://twinkalex1470-crypto.github.io/Catsite/",
         "#hide-settings: 1",
         ""
     ]
