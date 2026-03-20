@@ -40,6 +40,8 @@ jobs:
           if git diff --staged --quiet; then
             echo "❌ Нет изменений"
           else
+          git fetch origin main
+          git pull --rebase origin main # Это самое главное
             git commit -m "🔄 Автообновление NECRON конфигов $(date +%Y-%m-%d_%H:%M)"
             git push
             echo "✅ Обновлено и запушено!"
