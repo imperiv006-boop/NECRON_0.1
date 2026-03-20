@@ -14,7 +14,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        # ← ТОКЕН УБРАН — теперь работает дефолтный GITHUB_TOKEN с правами write
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -43,7 +42,7 @@ jobs:
             echo "❌ Нет изменений"
           else
             git fetch origin main
-            git pull --rebase origin main   # ← ЭТО САМОЕ ГЛАВНОЕ! (решает конфликты push)
+            git pull --rebase origin main   # ← САМОЕ ГЛАВНОЕ! решает конфликты
             
             git commit -m "🔄 Автообновление NECRON конфигов $(date +%Y-%m-%d_%H:%M)"
             git push
